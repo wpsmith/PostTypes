@@ -1,0 +1,36 @@
+{
+  "name": "wpsmith/posttypes",
+  "description": "WordPress Post Types.",
+  "keywords": [
+    "wordpress",
+    "widgets"
+  ],
+  "homepage": "https://github.com/wpsmith/WPS-PostTypes",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Travis Smith",
+      "email": "t@wpsmith.net",
+      "homepage": "http://wpsmith.net/",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/wpsmith/WPS-PostTypes/issues"
+  },
+  "require": {
+    "php": ">=5.2.4",
+    "wpsmith/fields": "^0.0.1",
+    "wpsmith/functions": "^0.0.1",
+    "wpsmith/posttype": "^0.0.1",
+    "wpsmith/rewrite": "^0.0.1",
+    "wpsmith/schema": "^0.0.1",
+    "wpsmith/singleton": "0.0.1",
+    "wpsmith/templates": "0.0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "WPS\\PostTypes\\": "src/"
+    }
+  }
+}
