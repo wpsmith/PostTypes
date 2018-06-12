@@ -17,7 +17,7 @@
 
 namespace WPS\PostTypes;
 
-use WPS\PostTypes\PostType;
+use WPS;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -97,14 +97,14 @@ if ( ! class_exists( 'WPS\PostTypes\Manual' ) ) {
 			WPS\Plugins\ACF::get_instance()->add_bidirectional( 'manuals_vans' );
 
 			$template_loader = $this->get_template_loader();
-			new WPS\Core\Rewrite_Endpoint( array(
+			new WPS\Rewrite\Rewrite_Endpoint( array(
 				'template'  => $template_loader->get_template_part( 'single', $this->post_type ),
 				'var'       => $this->post_type,
 				'post_type' => $this->post_type,
 				'post_meta' => $this->post_meta_key,
 			) );
 
-			new WPS\Core\Rewrite_Endpoint( array(
+			new WPS\Rewrite\Rewrite_Endpoint( array(
 				'template'  => $template_loader->get_template_part( 'archive', $this->plural ),
 				'var'       => $this->plural,
 				'post_type' => $this->post_type,
