@@ -21,7 +21,7 @@
   "require": {
     "php": ">=5.2.4",
     "wpsmith/fields": "^0.0.1",
-    "wpsmith/functions": "^0.0.1",
+    "wpsmith/functions": "^0.0.2",
     "wpsmith/posttype": "^0.0.1",
     "wpsmith/rewrite": "^0.0.1",
     "wpsmith/schema": "^0.0.1",

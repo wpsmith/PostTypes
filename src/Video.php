@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'WPS\PostTypes\Video' ) ) {
-	class Video extends WPS\PostType\PostType {
+	class Video extends WPS\PostTypes\PostType {
 
 		/**
 		 * Post Type registered name

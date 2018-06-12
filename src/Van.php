@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 if ( ! class_exists( 'WPS\PostTypes\Van' ) ) {
-	class Van extends WPS\PostType\PostType {
+	class Van extends WPS\PostTypes\PostType {
 
 		/**
 		 * Post Type registered name

@@ -17,7 +17,7 @@
 
 namespace WPS\PostTypes;
 
-use WPS\PostType\PostType;
+use WPS\PostTypes\PostType;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
