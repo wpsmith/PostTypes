@@ -20,13 +20,13 @@
   },
   "require": {
     "php": ">=5.2.4",
-    "wpsmith/fields": "^0.0.1",
-    "wpsmith/functions": "^0.0.2",
-    "wpsmith/posttype": "^0.0.1",
-    "wpsmith/rewrite": "^0.0.1",
-    "wpsmith/schema": "^0.0.1",
-    "wpsmith/singleton": "0.0.1",
-    "wpsmith/templates": "0.0.1"
+    "wpsmith/fields": "dev-master",
+    "wpsmith/functions": "dev-master",
+    "wpsmith/posttype": "dev-master",
+    "wpsmith/rewrite": "dev-master",
+    "wpsmith/schema": "dev-master",
+    "wpsmith/singleton": "^0.0.1",
+    "wpsmith/templates": "dev-master"
   },
   "autoload": {
     "psr-4": {
