@@ -25,7 +25,7 @@
     "wpsmith/posttype": "dev-master",
     "wpsmith/rewrite": "dev-master",
     "wpsmith/schema": "dev-master",
-    "wpsmith/singleton": "^0.0.1",
+    "wpsmith/singleton": "^0.0.2",
     "wpsmith/templates": "dev-master"
   },
   "autoload": {
