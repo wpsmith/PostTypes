@@ -8,16 +8,16 @@
  *
  * @package    WPS\PostTypes
  * @author     Travis Smith <t@wpsmith.net>
- * @copyright  2015-2018 Travis Smith
+ * @copyright  2015-2019 Travis Smith
  * @license    http://opensource.org/licenses/gpl-2.0.php GNU Public License v2
  * @link       https://github.com/wpsmith/WPS
  * @version    1.0.0
  * @since      0.1.0
  */
 
-namespace WPS\PostTypes;
+namespace WPS\WP\PostTypes;
 
-use WPS\PostTypes\PostType;
+use WPS\WP\PostTypes\PostType;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -81,12 +81,12 @@ if ( ! class_exists( 'WPS\PostTypes\Team' ) ) {
 					'label' => '',
 				) )
 				->addChoice( 'yes', array(
-					'label' => __( 'GT Alumni', WPS_TEXT_DOMAIN ),
+					'label' => __( 'GT Alumni', 'wps' ),
 				) )
 				->setLocation( 'post_type', '==', $this->post_type );
 
 			$social = $this->new_fields_builder( 'social', array(
-				'title' => __( 'Social Settings', WPS_TEXT_DOMAIN ),
+				'title' => __( 'Social Settings', 'wps' ),
 			) );
 
 			$social
@@ -94,7 +94,7 @@ if ( ! class_exists( 'WPS\PostTypes\Team' ) ) {
 					'social_accounts',
 					array(
 						'layout'       => 'table',
-						'button_label' => __( 'Add Account', WPS_TEXT_DOMAIN ),
+						'button_label' => __( 'Add Account', 'wps' ),
 					)
 				)
 				->addText( 'account_name' )
@@ -103,8 +103,8 @@ if ( ! class_exists( 'WPS\PostTypes\Team' ) ) {
 				->addColorPicker( 'account_color' )
 				->endRepeater()
 				->addMessage(
-					__( 'Instructions', WPS_TEXT_DOMAIN ),
-					__( 'See <a href="http://designpieces.com/2012/12/social-media-colours-hex-and-rgb/">This reference</a> for official social media account colors.', WPS_TEXT_DOMAIN )
+					__( 'Instructions', 'wps' ),
+					__( 'See <a href="http://designpieces.com/2012/12/social-media-colours-hex-and-rgb/">This reference</a> for official social media account colors.', 'wps' )
 				)
 				->setLocation( 'post_type', '==', $this->post_type );
 
@@ -143,33 +143,33 @@ if ( ! class_exists( 'WPS\PostTypes\Team' ) ) {
 
 		public function get_labels() {
 			return array(
-				'name'                  => _x( 'Team Members', 'Post Type General Name', WPS_TEXT_DOMAIN ),
-				'singular_name'         => _x( 'Team Member', 'Post Type Singular Name', WPS_TEXT_DOMAIN ),
-				'menu_name'             => __( 'Team Members', WPS_TEXT_DOMAIN ),
-				'name_admin_bar'        => __( 'Team Members', WPS_TEXT_DOMAIN ),
-				'archives'              => __( 'Item Archives', WPS_TEXT_DOMAIN ),
-				'attributes'            => __( 'Item Attributes', WPS_TEXT_DOMAIN ),
-				'parent_item_colon'     => __( 'Parent Item:', WPS_TEXT_DOMAIN ),
-				'all_items'             => __( 'All Items', WPS_TEXT_DOMAIN ),
-				'add_new_item'          => __( 'Add New Item', WPS_TEXT_DOMAIN ),
-				'add_new'               => __( 'Add New', WPS_TEXT_DOMAIN ),
-				'new_item'              => __( 'New Item', WPS_TEXT_DOMAIN ),
-				'edit_item'             => __( 'Edit Item', WPS_TEXT_DOMAIN ),
-				'update_item'           => __( 'Update Item', WPS_TEXT_DOMAIN ),
-				'view_item'             => __( 'View Item', WPS_TEXT_DOMAIN ),
-				'view_items'            => __( 'View Items', WPS_TEXT_DOMAIN ),
-				'search_items'          => __( 'Search Item', WPS_TEXT_DOMAIN ),
-				'not_found'             => __( 'Not found', WPS_TEXT_DOMAIN ),
-				'not_found_in_trash'    => __( 'Not found in Trash', WPS_TEXT_DOMAIN ),
-				'featured_image'        => __( 'Team Member Image', WPS_TEXT_DOMAIN ),
-				'set_featured_image'    => __( 'Set team member image', WPS_TEXT_DOMAIN ),
-				'remove_featured_image' => __( 'Remove team member image', WPS_TEXT_DOMAIN ),
-				'use_featured_image'    => __( 'Use as team member image', WPS_TEXT_DOMAIN ),
-				'insert_into_item'      => __( 'Insert into item', WPS_TEXT_DOMAIN ),
-				'uploaded_to_this_item' => __( 'Uploaded to this item', WPS_TEXT_DOMAIN ),
-				'items_list'            => __( 'Items list', WPS_TEXT_DOMAIN ),
-				'items_list_navigation' => __( 'Items list navigation', WPS_TEXT_DOMAIN ),
-				'filter_items_list'     => __( 'Filter items list', WPS_TEXT_DOMAIN ),
+				'name'                  => _x( 'Team Members', 'Post Type General Name', 'wps' ),
+				'singular_name'         => _x( 'Team Member', 'Post Type Singular Name', 'wps' ),
+				'menu_name'             => __( 'Team Members', 'wps' ),
+				'name_admin_bar'        => __( 'Team Members', 'wps' ),
+				'archives'              => __( 'Item Archives', 'wps' ),
+				'attributes'            => __( 'Item Attributes', 'wps' ),
+				'parent_item_colon'     => __( 'Parent Item:', 'wps' ),
+				'all_items'             => __( 'All Items', 'wps' ),
+				'add_new_item'          => __( 'Add New Item', 'wps' ),
+				'add_new'               => __( 'Add New', 'wps' ),
+				'new_item'              => __( 'New Item', 'wps' ),
+				'edit_item'             => __( 'Edit Item', 'wps' ),
+				'update_item'           => __( 'Update Item', 'wps' ),
+				'view_item'             => __( 'View Item', 'wps' ),
+				'view_items'            => __( 'View Items', 'wps' ),
+				'search_items'          => __( 'Search Item', 'wps' ),
+				'not_found'             => __( 'Not found', 'wps' ),
+				'not_found_in_trash'    => __( 'Not found in Trash', 'wps' ),
+				'featured_image'        => __( 'Team Member Image', 'wps' ),
+				'set_featured_image'    => __( 'Set team member image', 'wps' ),
+				'remove_featured_image' => __( 'Remove team member image', 'wps' ),
+				'use_featured_image'    => __( 'Use as team member image', 'wps' ),
+				'insert_into_item'      => __( 'Insert into item', 'wps' ),
+				'uploaded_to_this_item' => __( 'Uploaded to this item', 'wps' ),
+				'items_list'            => __( 'Items list', 'wps' ),
+				'items_list_navigation' => __( 'Items list navigation', 'wps' ),
+				'filter_items_list'     => __( 'Filter items list', 'wps' ),
 			);
 		}
 
@@ -194,11 +194,11 @@ if ( ! class_exists( 'WPS\PostTypes\Team' ) ) {
 		public function manage_posts_columns( $columns ) {
 			return array(
 				'cb'        => '<input type="checkbox" />',
-				'title'     => __( 'Name', WPS_TEXT_DOMAIN ),
-				'thumbnail' => __( 'Thumbnail', WPS_TEXT_DOMAIN ),
-				'position'  => __( 'Title', WPS_TEXT_DOMAIN ),
-				'alumni'    => __( 'GT Alumni', WPS_TEXT_DOMAIN ),
-				'date'      => __( 'Date', WPS_TEXT_DOMAIN ),
+				'title'     => __( 'Name', 'wps' ),
+				'thumbnail' => __( 'Thumbnail', 'wps' ),
+				'position'  => __( 'Title', 'wps' ),
+				'alumni'    => __( 'GT Alumni', 'wps' ),
+				'date'      => __( 'Date', 'wps' ),
 			);
 		}
 

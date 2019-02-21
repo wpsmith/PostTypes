@@ -8,16 +8,16 @@
  *
  * @package    WPS\PostTypes
  * @author     Travis Smith <t@wpsmith.net>
- * @copyright  2015-2018 Travis Smith
+ * @copyright  2015-2019 Travis Smith
  * @license    http://opensource.org/licenses/gpl-2.0.php GNU Public License v2
  * @link       https://github.com/wpsmith/WPS
  * @version    1.0.0
  * @since      0.1.0
  */
 
-namespace WPS\PostTypes;
+namespace WPS\WP\PostTypes;
 
-use WPS\PostTypes\PostType;
+use WPS\WP\PostTypes\PostType;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -129,9 +129,9 @@ if ( ! class_exists( 'WPS\PostTypes\Product' ) ) {
 		public function manage_posts_columns( $columns ) {
 			return array(
 				'cb'        => '<input type="checkbox" />',
-				'title'     => __( 'Title', WPS_TEXT_DOMAIN ),
-				'thumbnail' => __( 'Thumbnail', WPS_TEXT_DOMAIN ),
-				'date'      => __( 'Date', WPS_TEXT_DOMAIN ),
+				'title'     => __( 'Title', 'wps' ),
+				'thumbnail' => __( 'Thumbnail', 'wps' ),
+				'date'      => __( 'Date', 'wps' ),
 			);
 		}
 

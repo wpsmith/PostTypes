@@ -8,14 +8,14 @@
  *
  * @package    WPS\PostTypes
  * @author     Travis Smith <t@wpsmith.net>
- * @copyright  2015-2018 Travis Smith
+ * @copyright  2015-2019 Travis Smith
  * @license    http://opensource.org/licenses/gpl-2.0.php GNU Public License v2
  * @link       https://github.com/wpsmith/WPS
  * @version    1.0.0
  * @since      0.1.0
  */
 
-namespace WPS\PostTypes;
+namespace WPS\WP\PostTypes;
 
 use WPS\Core;
 
@@ -37,8 +37,8 @@ if ( ! class_exists( 'WPS\PostTypes\Page' ) ) {
 			$content = $this->new_fields_builder();
 			$content
 				->addTextarea( 'page_description_value', array(
-					'label'       => __( 'Page Description', WPS_TEXT_DOMAIN ),
-					'description' => __( 'Define slide order. Ex. 1,2,3,4,...', WPS_TEXT_DOMAIN ),
+					'label'       => __( 'Page Description', 'wps' ),
+					'description' => __( 'Define slide order. Ex. 1,2,3,4,...', 'wps' ),
 				) )
 				->setLocation( 'post_type', '==', $this->post_type );
 

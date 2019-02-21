@@ -8,16 +8,16 @@
  *
  * @package    WPS\PostTypes
  * @author     Travis Smith <t@wpsmith.net>
- * @copyright  2015-2018 Travis Smith
+ * @copyright  2015-2019 Travis Smith
  * @license    http://opensource.org/licenses/gpl-2.0.php GNU Public License v2
  * @link       https://github.com/wpsmith/WPS
  * @version    1.0.0
  * @since      0.1.0
  */
 
-namespace WPS\PostTypes;
+namespace WPS\WP\PostTypes;
 
-use WPS\PostTypes\PostType;
+use WPS\WP\PostTypes\PostType;
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -34,8 +34,8 @@ if ( ! class_exists( 'WPS\PostTypes\Slide' ) ) {
 			$content = $this->new_fields_builder();
 			$content
 				->addText( 'slide_number_value', array(
-					'label'                => __( 'Slide Number Value', WPS_TEXT_DOMAIN ),
-					'description'          => __( 'Define slide order. Ex. 1,2,3,4,...', WPS_TEXT_DOMAIN ),
+					'label'                => __( 'Slide Number Value', 'wps' ),
+					'description'          => __( 'Define slide order. Ex. 1,2,3,4,...', 'wps' ),
 					// For use by "mcguffin/acf-quick-edit-fields",
 					'allow_quickedit'      => true,
 					'allow_bulkedit'       => true,
@@ -43,7 +43,7 @@ if ( ! class_exists( 'WPS\PostTypes\Slide' ) ) {
 					'show_column_sortable' => true,
 				) )
 				->addUrl( 'video', array( 'label' => 'Video URL' ) )
-				->setInstructions( __( 'YouTube or Vimeo URL.', WPS_TEXT_DOMAIN ) )
+				->setInstructions( __( 'YouTube or Vimeo URL.', 'wps' ) )
 				->addTrueFalse( 'no_title', array(
 					// For use by "mcguffin/acf-quick-edit-fields",
 					'allow_quickedit'      => true,
@@ -51,7 +51,7 @@ if ( ! class_exists( 'WPS\PostTypes\Slide' ) ) {
 					'show_column'          => true,
 					'show_column_sortable' => true,
 				) )
-				->setInstructions( __( 'Whether to show the title in the caption or not.', WPS_TEXT_DOMAIN ) )
+				->setInstructions( __( 'Whether to show the title in the caption or not.', 'wps' ) )
 				->setLocation( 'post_type', '==', $this->post_type );
 
 			$fields->builder[] = $content;
@@ -62,33 +62,33 @@ if ( ! class_exists( 'WPS\PostTypes\Slide' ) ) {
 		 */
 		public function create_post_type() {
 			$labels   = array(
-				'name'                  => _x( 'Slides', 'Post Type General Name', WPS_TEXT_DOMAIN ),
-				'singular_name'         => _x( 'Slide', 'Post Type Singular Name', WPS_TEXT_DOMAIN ),
-				'menu_name'             => __( 'Slides', WPS_TEXT_DOMAIN ),
-				'name_admin_bar'        => __( 'Slides', WPS_TEXT_DOMAIN ),
-				'archives'              => __( 'Item Archives', WPS_TEXT_DOMAIN ),
-				'attributes'            => __( 'Item Attributes', WPS_TEXT_DOMAIN ),
-				'parent_item_colon'     => __( 'Parent Item:', WPS_TEXT_DOMAIN ),
-				'all_items'             => __( 'All Items', WPS_TEXT_DOMAIN ),
-				'add_new_item'          => __( 'Add New Item', WPS_TEXT_DOMAIN ),
-				'add_new'               => __( 'Add New', WPS_TEXT_DOMAIN ),
-				'new_item'              => __( 'New Item', WPS_TEXT_DOMAIN ),
-				'edit_item'             => __( 'Edit Item', WPS_TEXT_DOMAIN ),
-				'update_item'           => __( 'Update Item', WPS_TEXT_DOMAIN ),
-				'view_item'             => __( 'View Item', WPS_TEXT_DOMAIN ),
-				'view_items'            => __( 'View Items', WPS_TEXT_DOMAIN ),
-				'search_items'          => __( 'Search Item', WPS_TEXT_DOMAIN ),
-				'not_found'             => __( 'Not found', WPS_TEXT_DOMAIN ),
-				'not_found_in_trash'    => __( 'Not found in Trash', WPS_TEXT_DOMAIN ),
-				'featured_image'        => __( 'Featured Image', WPS_TEXT_DOMAIN ),
-				'set_featured_image'    => __( 'Set featured image', WPS_TEXT_DOMAIN ),
-				'remove_featured_image' => __( 'Remove featured image', WPS_TEXT_DOMAIN ),
-				'use_featured_image'    => __( 'Use as featured image', WPS_TEXT_DOMAIN ),
-				'insert_into_item'      => __( 'Insert into item', WPS_TEXT_DOMAIN ),
-				'uploaded_to_this_item' => __( 'Uploaded to this item', WPS_TEXT_DOMAIN ),
-				'items_list'            => __( 'Items list', WPS_TEXT_DOMAIN ),
-				'items_list_navigation' => __( 'Items list navigation', WPS_TEXT_DOMAIN ),
-				'filter_items_list'     => __( 'Filter items list', WPS_TEXT_DOMAIN ),
+				'name'                  => _x( 'Slides', 'Post Type General Name', 'wps' ),
+				'singular_name'         => _x( 'Slide', 'Post Type Singular Name', 'wps' ),
+				'menu_name'             => __( 'Slides', 'wps' ),
+				'name_admin_bar'        => __( 'Slides', 'wps' ),
+				'archives'              => __( 'Item Archives', 'wps' ),
+				'attributes'            => __( 'Item Attributes', 'wps' ),
+				'parent_item_colon'     => __( 'Parent Item:', 'wps' ),
+				'all_items'             => __( 'All Items', 'wps' ),
+				'add_new_item'          => __( 'Add New Item', 'wps' ),
+				'add_new'               => __( 'Add New', 'wps' ),
+				'new_item'              => __( 'New Item', 'wps' ),
+				'edit_item'             => __( 'Edit Item', 'wps' ),
+				'update_item'           => __( 'Update Item', 'wps' ),
+				'view_item'             => __( 'View Item', 'wps' ),
+				'view_items'            => __( 'View Items', 'wps' ),
+				'search_items'          => __( 'Search Item', 'wps' ),
+				'not_found'             => __( 'Not found', 'wps' ),
+				'not_found_in_trash'    => __( 'Not found in Trash', 'wps' ),
+				'featured_image'        => __( 'Featured Image', 'wps' ),
+				'set_featured_image'    => __( 'Set featured image', 'wps' ),
+				'remove_featured_image' => __( 'Remove featured image', 'wps' ),
+				'use_featured_image'    => __( 'Use as featured image', 'wps' ),
+				'insert_into_item'      => __( 'Insert into item', 'wps' ),
+				'uploaded_to_this_item' => __( 'Uploaded to this item', 'wps' ),
+				'items_list'            => __( 'Items list', 'wps' ),
+				'items_list_navigation' => __( 'Items list navigation', 'wps' ),
+				'filter_items_list'     => __( 'Filter items list', 'wps' ),
 			);
 			$rewrite  = array(
 				'slug'       => $this->post_type,
@@ -103,8 +103,8 @@ if ( ! class_exists( 'WPS\PostTypes\Slide' ) ) {
 				'thumbnail',
 			);
 			$args     = array(
-				'label'               => __( 'Slides', WPS_TEXT_DOMAIN ),
-				'description'         => __( 'For Slides', WPS_TEXT_DOMAIN ),
+				'label'               => __( 'Slides', 'wps' ),
+				'description'         => __( 'For Slides', 'wps' ),
 				'labels'              => $labels,
 				'supports'            => $supports,
 				'hierarchical'        => false,
@@ -133,26 +133,26 @@ if ( ! class_exists( 'WPS\PostTypes\Slide' ) ) {
 		function create_taxonomy() {
 
 			$labels  = array(
-				'name'                       => _x( 'Slideshows', 'Taxonomy General Name', WPS_TEXT_DOMAIN ),
-				'singular_name'              => _x( 'Slideshow', 'Taxonomy Singular Name', WPS_TEXT_DOMAIN ),
-				'menu_name'                  => __( 'Slideshows', WPS_TEXT_DOMAIN ),
-				'all_items'                  => __( 'All Items', WPS_TEXT_DOMAIN ),
-				'parent_item'                => __( 'Parent Item', WPS_TEXT_DOMAIN ),
-				'parent_item_colon'          => __( 'Parent Item:', WPS_TEXT_DOMAIN ),
-				'new_item_name'              => __( 'New Item Name', WPS_TEXT_DOMAIN ),
-				'add_new_item'               => __( 'Add New Item', WPS_TEXT_DOMAIN ),
-				'edit_item'                  => __( 'Edit Item', WPS_TEXT_DOMAIN ),
-				'update_item'                => __( 'Update Item', WPS_TEXT_DOMAIN ),
-				'view_item'                  => __( 'View Item', WPS_TEXT_DOMAIN ),
-				'separate_items_with_commas' => __( 'Separate items with commas', WPS_TEXT_DOMAIN ),
-				'add_or_remove_items'        => __( 'Add or remove items', WPS_TEXT_DOMAIN ),
-				'choose_from_most_used'      => __( 'Choose from the most used', WPS_TEXT_DOMAIN ),
-				'popular_items'              => __( 'Popular Items', WPS_TEXT_DOMAIN ),
-				'search_items'               => __( 'Search Items', WPS_TEXT_DOMAIN ),
-				'not_found'                  => __( 'Not Found', WPS_TEXT_DOMAIN ),
-				'no_terms'                   => __( 'No items', WPS_TEXT_DOMAIN ),
-				'items_list'                 => __( 'Items list', WPS_TEXT_DOMAIN ),
-				'items_list_navigation'      => __( 'Items list navigation', WPS_TEXT_DOMAIN ),
+				'name'                       => _x( 'Slideshows', 'Taxonomy General Name', 'wps' ),
+				'singular_name'              => _x( 'Slideshow', 'Taxonomy Singular Name', 'wps' ),
+				'menu_name'                  => __( 'Slideshows', 'wps' ),
+				'all_items'                  => __( 'All Items', 'wps' ),
+				'parent_item'                => __( 'Parent Item', 'wps' ),
+				'parent_item_colon'          => __( 'Parent Item:', 'wps' ),
+				'new_item_name'              => __( 'New Item Name', 'wps' ),
+				'add_new_item'               => __( 'Add New Item', 'wps' ),
+				'edit_item'                  => __( 'Edit Item', 'wps' ),
+				'update_item'                => __( 'Update Item', 'wps' ),
+				'view_item'                  => __( 'View Item', 'wps' ),
+				'separate_items_with_commas' => __( 'Separate items with commas', 'wps' ),
+				'add_or_remove_items'        => __( 'Add or remove items', 'wps' ),
+				'choose_from_most_used'      => __( 'Choose from the most used', 'wps' ),
+				'popular_items'              => __( 'Popular Items', 'wps' ),
+				'search_items'               => __( 'Search Items', 'wps' ),
+				'not_found'                  => __( 'Not Found', 'wps' ),
+				'no_terms'                   => __( 'No items', 'wps' ),
+				'items_list'                 => __( 'Items list', 'wps' ),
+				'items_list_navigation'      => __( 'Items list navigation', 'wps' ),
 			);
 			$rewrite = array(
 				'slug'         => 'slideshow',
@@ -178,11 +178,11 @@ if ( ! class_exists( 'WPS\PostTypes\Slide' ) ) {
 		public function manage_posts_columns( $columns ) {
 			return array(
 				'cb'        => '<input type="checkbox" />',
-				'thumbnail' => __( 'Thumbnail', WPS_TEXT_DOMAIN ),
-				'title'     => __( 'Title', WPS_TEXT_DOMAIN ),
-				'slideshow' => __( 'Slideshow', WPS_TEXT_DOMAIN ),
-//			'slide_order' => __( 'Slide Order', WPS_TEXT_DOMAIN ),
-				'date'      => __( 'Date', WPS_TEXT_DOMAIN ),
+				'thumbnail' => __( 'Thumbnail', 'wps' ),
+				'title'     => __( 'Title', 'wps' ),
+				'slideshow' => __( 'Slideshow', 'wps' ),
+//			'slide_order' => __( 'Slide Order', 'wps' ),
+				'date'      => __( 'Date', 'wps' ),
 			);
 		}
 
@@ -204,7 +204,7 @@ if ( ! class_exists( 'WPS\PostTypes\Slide' ) ) {
 					if ( is_string( $terms ) ) {
 						echo $terms;
 					} else {
-						_e( 'Unable to get author(s)', WPS_TEXT_DOMAIN );
+						_e( 'Unable to get author(s)', 'wps' );
 					}
 					break;
 

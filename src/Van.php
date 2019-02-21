@@ -8,14 +8,14 @@
  *
  * @package    WPS\PostTypes
  * @author     Travis Smith <t@wpsmith.net>
- * @copyright  2015-2018 Travis Smith
+ * @copyright  2015-2019 Travis Smith
  * @license    http://opensource.org/licenses/gpl-2.0.php GNU Public License v2
  * @link       https://github.com/wpsmith/WPS
  * @version    1.0.0
  * @since      0.1.0
  */
 
-namespace WPS\PostTypes;
+namespace WPS\WP\PostTypes;
 
 use WPS;
 
@@ -114,52 +114,52 @@ if ( ! class_exists( 'WPS\PostTypes\Van' ) ) {
 			$specs = $this->new_fields_builder( 'specifications' );
 			$specs
 				->addText( 'make', array(
-					'label' => __( 'Make', WPS_TEXT_DOMAIN ),
+					'label' => __( 'Make', 'wps' ),
 				) )
 				->addText( 'model', array(
-					'label' => __( 'Model', WPS_TEXT_DOMAIN ),
+					'label' => __( 'Model', 'wps' ),
 				) )
 				->addText( 'ramp-width', array(
-					'label' => __( 'Ramp width (inches)', WPS_TEXT_DOMAIN ),
+					'label' => __( 'Ramp width (inches)', 'wps' ),
 				) )
 				->addText( 'ramp-length', array(
-					'label' => __( 'Ramp length (inches)', WPS_TEXT_DOMAIN ),
+					'label' => __( 'Ramp length (inches)', 'wps' ),
 				) )
 				->addText( 'ramp-angle', array(
-					'label' => __( 'Ramp angle (degrees)', WPS_TEXT_DOMAIN ),
+					'label' => __( 'Ramp angle (degrees)', 'wps' ),
 				) )
 				->addText( 'door-opening-height', array(
-					'label' => __( 'Door opening height (inches)', WPS_TEXT_DOMAIN ),
+					'label' => __( 'Door opening height (inches)', 'wps' ),
 				) )
 				->addText( 'interior-smallest-width', array(
-					'label' => __( 'Interior width smallest (inches)', WPS_TEXT_DOMAIN ),
+					'label' => __( 'Interior width smallest (inches)', 'wps' ),
 				) )
 				->addText( 'interior-depth', array(
-					'label' => __( 'Interior depth (inches)', WPS_TEXT_DOMAIN ),
+					'label' => __( 'Interior depth (inches)', 'wps' ),
 				) )
 				->addText( 'ground-clearance', array(
-					'label' => __( 'Ground Clearance (inches)', WPS_TEXT_DOMAIN ),
+					'label' => __( 'Ground Clearance (inches)', 'wps' ),
 				) )
 				->setLocation( 'post_type', '==', $this->post_type );
 
 			$column_choices = array(
 				'choices' => array(
-					array( '' => __( 'Full Width', WPS_TEXT_DOMAIN ) ),
-					array( 'one-half' => __( 'One Half', WPS_TEXT_DOMAIN ) ),
-					array( 'one-third' => __( 'One Third', WPS_TEXT_DOMAIN ) ),
-					array( 'one-fourth' => __( 'One Fourth', WPS_TEXT_DOMAIN ) ),
-					array( 'one-sixth' => __( 'One Sixth', WPS_TEXT_DOMAIN ) ),
+					array( '' => __( 'Full Width', 'wps' ) ),
+					array( 'one-half' => __( 'One Half', 'wps' ) ),
+					array( 'one-third' => __( 'One Third', 'wps' ) ),
+					array( 'one-fourth' => __( 'One Fourth', 'wps' ) ),
+					array( 'one-sixth' => __( 'One Sixth', 'wps' ) ),
 				),
 			);
 
 			$manuals = $this->new_fields_builder( 'manuals' );
 			$manuals
 				->addText( 'manual_title', array(
-					'default'     => __( 'Field Manual', WPS_TEXT_DOMAIN ),
-					'placeholder' => __( 'Field Manual', WPS_TEXT_DOMAIN ),
+					'default'     => __( 'Field Manual', 'wps' ),
+					'placeholder' => __( 'Field Manual', 'wps' ),
 				) )
 				->addRelationship( 'manuals_vans', array(
-					'label'                   => __( 'Connected Manuals & Vans', WPS_TEXT_DOMAIN ),
+					'label'                   => __( 'Connected Manuals & Vans', 'wps' ),
 					'acf_relationship_create' => 1,
 					'post_type'               => array( 'manual', )
 				) )
@@ -168,8 +168,8 @@ if ( ! class_exists( 'WPS\PostTypes\Van' ) ) {
 			$galleries = $this->new_fields_builder( 'galleries' );
 			$galleries
 				->addText( 'gallery_title', array(
-					'default'     => __( 'Gallery', WPS_TEXT_DOMAIN ),
-					'placeholder' => __( 'Gallery', WPS_TEXT_DOMAIN ),
+					'default'     => __( 'Gallery', 'wps' ),
+					'placeholder' => __( 'Gallery', 'wps' ),
 				) )
 				->addSelect( 'gallery_columns', $column_choices )
 				->setDefaultValue( 'one-third' )
@@ -179,13 +179,13 @@ if ( ! class_exists( 'WPS\PostTypes\Van' ) ) {
 			$videos = $this->new_fields_builder( 'videos' );
 			$videos
 				->addText( 'videos_title', array(
-					'default'     => __( 'Repair Videos', WPS_TEXT_DOMAIN ),
-					'placeholder' => __( 'Repair Videos', WPS_TEXT_DOMAIN ),
+					'default'     => __( 'Repair Videos', 'wps' ),
+					'placeholder' => __( 'Repair Videos', 'wps' ),
 				) )
 				->addSelect( 'video_columns', $column_choices )
 				->setDefaultValue( 'one-third' )
 				->addRelationship( 'videos_vans', array(
-					'label'                   => __( 'Connected Videos & Vans', WPS_TEXT_DOMAIN ),
+					'label'                   => __( 'Connected Videos & Vans', 'wps' ),
 					'acf_relationship_create' => 1,
 					'post_type'               => array( 'video', )
 				) )
@@ -255,17 +255,17 @@ if ( ! class_exists( 'WPS\PostTypes\Van' ) ) {
 
 				// Manual Title
 				$title = get_post_meta( get_the_ID(), 'manual_title', true );
-				$title = $title ? $title : _n( 'Field Manual', 'Field Manuals', count( $manuals_vans ), WPS_TEXT_DOMAIN );
+				$title = $title ? $title : _n( 'Field Manual', 'Field Manuals', count( $manuals_vans ), 'wps' );
 
 				// Field Slug
-				$slug = _n( 'manual', 'manuals', count( $manuals_vans ), WPS_TEXT_DOMAIN );
+				$slug = _n( 'manual', 'manuals', count( $manuals_vans ), 'wps' );
 				$slug = count( $manuals_vans ) > 1 ? $slug . '/' : $slug . '/' . get_post( $manuals_vans[0] )->post_name . '/';
 
 				// The HTML
 				echo '<div class="field-manual full-width clearfix" style="background-color: #141e28;color: #fff; padding: 2em 0 1em; margin-bottom: 1.5em;"><div class="content">';
 				printf( '<div class="first two-thirds"><h3 style="color: #fff; margin: 0.5em 0;">%s</h3></div>', $title );
 				echo '<div class="one-third"><div class="wrap">';
-				printf( '<a target="_blank" href="%s" data-id="%s" class="button accent alignright">%s</a>', get_permalink() . $slug, $manuals_vans[0], __( 'Open', WPS_TEXT_DOMAIN ) );
+				printf( '<a target="_blank" href="%s" data-id="%s" class="button accent alignright">%s</a>', get_permalink() . $slug, $manuals_vans[0], __( 'Open', 'wps' ) );
 				echo '</div></div>';
 				echo '</div></div>';
 
@@ -283,7 +283,7 @@ if ( ! class_exists( 'WPS\PostTypes\Van' ) ) {
 
 				// Do Title
 				$title = get_post_meta( get_the_ID(), 'videos_title', true );
-				$title = $title ? $title : __( 'Repair Videos', WPS_TEXT_DOMAIN );
+				$title = $title ? $title : __( 'Repair Videos', 'wps' );
 				printf( '<h3>%s</h3>', $title );
 
 				// Do Videos
@@ -299,11 +299,11 @@ if ( ! class_exists( 'WPS\PostTypes\Van' ) ) {
 				}
 
 				// Do view all button
-//			$slug = _n( 'video', 'videos', count( $videos_vans ), WPS_TEXT_DOMAIN );
+//			$slug = _n( 'video', 'videos', count( $videos_vans ), 'wps' );
 //			echo '<div class="field-manual full-width clearfix" style="padding: 2em 0 1em; margin-bottom: 1.5em;"><div class="content">';
 //			echo '<div class="first two-thirds"><h3 style="margin: 0.5em 0;">&nbsp;</h3></div>';
 //			echo '<div class="one-third"><div class="wrap">';
-//			printf( '<a target="_blank" href="%s" class="button accent alignright">%s</a>', get_permalink() . $slug . '/', __( 'See All', WPS_TEXT_DOMAIN ) );
+//			printf( '<a target="_blank" href="%s" class="button accent alignright">%s</a>', get_permalink() . $slug . '/', __( 'See All', 'wps' ) );
 //			echo '</div></div>';
 //			echo '</div></div>';
 
@@ -317,7 +317,7 @@ if ( ! class_exists( 'WPS\PostTypes\Van' ) ) {
 			}
 
 			$title = get_post_meta( get_the_ID(), 'gallery_title', true );
-			$title = $title ? $title : __( 'Gallery', WPS_TEXT_DOMAIN );
+			$title = $title ? $title : __( 'Gallery', 'wps' );
 			printf( '<h3>%s</h3>', $title );
 
 			$this->gallery_args['columns'] = WPS\get_column_class_num_by_column_class_name( $this->get_columns( 'gallery_columns' ) );

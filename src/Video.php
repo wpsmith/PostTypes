@@ -8,14 +8,14 @@
  *
  * @package    WPS\PostTypes
  * @author     Travis Smith <t@wpsmith.net>
- * @copyright  2015-2018 Travis Smith
+ * @copyright  2015-2019 Travis Smith
  * @license    http://opensource.org/licenses/gpl-2.0.php GNU Public License v2
  * @link       https://github.com/wpsmith/WPS
  * @version    1.0.0
  * @since      0.1.0
  */
 
-namespace WPS\PostTypes;
+namespace WPS\WP\PostTypes;
 
 use WPS;
 
@@ -141,7 +141,7 @@ if ( ! class_exists( 'WPS\PostTypes\Video' ) ) {
 			$content = $this->new_fields_builder();
 			$content
 				->addRelationship( 'videos_vans', array(
-					'label'                   => __( 'Connected Videos & Vans', WPS_TEXT_DOMAIN ),
+					'label'                   => __( 'Connected Videos & Vans', 'wps' ),
 					'acf_relationship_create' => 1,
 					'post_type'               => array( 'van', )
 				) )
@@ -194,12 +194,12 @@ if ( ! class_exists( 'WPS\PostTypes\Video' ) ) {
 				return;
 			}
 			$title = get_post_meta( get_the_ID(), 'manual_title', true );
-			$title = $title ? $title : __( 'Field Manual', WPS_TEXT_DOMAIN );
+			$title = $title ? $title : __( 'Field Manual', 'wps' );
 
 			echo '<div class="field-manual full-width clearfix" style="background-color: #141e28;color: #fff; padding: 2em 0 1em; margin-bottom: 1.5em;"><div class="content">';
 			printf( '<div class="first two-thirds"><h3 style="color: #fff; margin: 0.5em 0;">%s</h3></div>', $title );
 			echo '<div class="one-third"><div class="wrap">';
-			printf( '<a target="_blank" href="%s" class="button accent alignright">%s</a>', get_permalink() . 'manual/', __( 'Open', WPS_TEXT_DOMAIN ) );
+			printf( '<a target="_blank" href="%s" class="button accent alignright">%s</a>', get_permalink() . 'manual/', __( 'Open', 'wps' ) );
 			echo '</div></div>';
 			echo '</div></div>';
 		}
@@ -211,7 +211,7 @@ if ( ! class_exists( 'WPS\PostTypes\Video' ) ) {
 
 			// Do Title
 			$title = get_post_meta( get_the_ID(), 'videos_title', true );
-			$title = $title ? $title : __( 'Repair Videos', WPS_TEXT_DOMAIN );
+			$title = $title ? $title : __( 'Repair Videos', 'wps' );
 			printf( '<h3>%s</h3>', $title );
 
 			// Do Videos
